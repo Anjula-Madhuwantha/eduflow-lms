@@ -1,0 +1,202 @@
+.leaderboard-header-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.top-player-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.top-player-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.top-player-card.rank-1 {
+  border-color: #fbbf24;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, var(--bg-card) 100%);
+}
+
+.top-player-card.rank-2 {
+  border-color: #94a3b8;
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.05) 0%, var(--bg-card) 100%);
+}
+
+.top-player-card.rank-3 {
+  border-color: #cd7c2f;
+  background: linear-gradient(135deg, rgba(205, 124, 47, 0.05) 0%, var(--bg-card) 100%);
+}
+
+.top-rank-badge {
+  font-size: 36px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.top-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin: 0 auto 12px;
+  border: 3px solid;
+}
+
+.rank-1 .top-avatar { background: linear-gradient(135deg, #fbbf24, #f59e0b); border-color: #fbbf24; }
+.rank-2 .top-avatar { background: linear-gradient(135deg, #94a3b8, #64748b); border-color: #94a3b8; }
+.rank-3 .top-avatar { background: linear-gradient(135deg, #cd7c2f, #b45309); border-color: #cd7c2f; }
+
+.top-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.top-xp {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--primary-light);
+  margin-bottom: 4px;
+}
+
+.top-level {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.leaderboard-table {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.lb-table-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 120px 100px 80px;
+  padding: 14px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lb-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 120px 100px 80px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.lb-row:last-child {
+  border-bottom: none;
+}
+
+.lb-row:hover {
+  background: var(--bg-hover);
+}
+
+.lb-row.current-user {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.lb-rank {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.lb-rank.top { color: #fbbf24; }
+
+.lb-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lb-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gradient-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.lb-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lb-xp {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.lb-streak {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.lb-level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-level-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary-light);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.you-tag {
+  background: var(--primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+@media (max-width: 1024px) {
+  .leaderboard-header-cards { grid-template-columns: 1fr; }
+  .lb-table-header, .lb-row { grid-template-columns: 50px 1fr 100px; }
+  .lb-table-header > *:nth-child(n+4),
+  .lb-row > *:nth-child(n+4) { display: none; }
+}
